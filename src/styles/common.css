@@ -1,0 +1,14 @@
+:root {
+  --record-grid-max-width: 960px;
+  --hex-menu-gap: 74px;
+}
+
+.max-w-record-grid {
+  max-width: var(--record-grid-max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gap-hex-menu {
+  gap: var(--hex-menu-gap);
+} 
