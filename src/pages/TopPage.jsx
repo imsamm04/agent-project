@@ -9,26 +9,18 @@ import ScrollToTop from '../components/ScrollToTop';
 import { records, hexMenus } from '../data/dummyData';
 import '../styles/common.css';
 import LoadingSpinner from '../components/LoadingSpinner';
-
+import useLoadMore from '../hooks/useLoadMore';
 
 const TopPage = () => {
-  const [loading, setLoading] = useState(false);
-  const [visibleCount, setVisibleCount] = useState(8);
   const [selectedMenu, setSelectedMenu] = useState('');
-
-  const handleLoadMore = () => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setVisibleCount((prev) => Math.min(prev + 8, records.length));
-    }, 1500);
-  };
 
   const filteredRecords = records.filter(rec => {
     if (!selectedMenu) return true;
     const meal = rec.timeLabel.split('.').pop();
     return meal === selectedMenu;
   });
+
+  const { visibleCount, loading, handleLoadMore } = useLoadMore(filteredRecords.length);
 
   return (
     <div>
@@ -66,15 +58,16 @@ const TopPage = () => {
           </div>
           {/* Record Cards + ScrollToTop */}
           <div className="relative mb-8" style={{ width: 'fit-content', margin: '0 auto' }}>
-            <div className="grid grid-cols-4 gap-2 max-w-record-grid">
+            <div className="grid grid-cols-4 gap-2 max-w-grid">
               {filteredRecords.slice(0, visibleCount).map((rec, idx) => (
                 <RecordCard key={idx} {...rec} />
               ))}
             </div>
             <div
-              className="absolute right-[-60px] top-0"
+              className="fixed z-50"
               style={{
-                top: `calc(100% - 55px)`,
+                right: `calc((100vw - var(--container-width)) / 2 - 10px)`,
+                bottom: '32px',
               }}
             >
               <ScrollToTop />

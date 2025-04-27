@@ -14,10 +14,18 @@ const Footer = () => (
     className="w-full"
     style={{ background: '#414141', height: 128 }}
   >
-    <div className="flex items-center max-w-record-grid  h-full mt-[64px]">
+    <div className="flex items-center max-w-grid  h-full mt-[64px]">
       <ul className="flex flex-row gap-12">
         {footerLinks.map((link, idx) => (
-          <li key={idx} className="text-white text-base whitespace-nowrap">
+          <li key={idx} className="text-white whitespace-nowrap"
+            style={{
+              fontFamily: 'Hiragino Kaku Gothic Pro, sans-serif',
+              fontWeight: 300,
+              fontSize: '11px',
+              lineHeight: '16px',
+              letterSpacing: '0.03px',
+            }}
+          >
             {link}
           </li>
         ))}

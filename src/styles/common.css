@@ -1,9 +1,10 @@
 :root {
   --record-grid-max-width: 960px;
   --hex-menu-gap: 74px;
+  --container-width: 1100px;
 }
 
-.max-w-record-grid {
+.max-w-grid {
   max-width: var(--record-grid-max-width);
   margin-left: auto;
   margin-right: auto;
