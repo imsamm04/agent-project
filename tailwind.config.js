@@ -5,7 +5,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'jp': ['Noto Sans JP', 'sans-serif'],
+        'latin': ['Inter', 'sans-serif'],
+      },
       colors: {
+        primary: '#FF963C',
+        secondary: '#8FE9D0',
+        dark: '#2E2E2E',
         primary: {
           300: '#FFD700', // vàng nhạt
           400: '#FFB74D', // cam nhạt
@@ -24,9 +31,6 @@ module.exports = {
         white: '#fff',
         'dark-500': '#333333',
         'dark-600': '#212121',
-      },
-      fontFamily: {
-        sans: ['"Noto Sans JP"', 'Arial', 'sans-serif'],
       },
       borderRadius: {
         xl: '24px',
