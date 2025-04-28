@@ -17,7 +17,19 @@ const HexMenuItem = ({ icon, label, subLabel, active, onClick }) => (
         {/* Icon overlay */}
         <img src={icon} alt="hexagon icon" className="w-10 h-10 mt-4" />
         {/* Label nằm trong hexagon */}
-        <span className="text-white text-lg mt-2 leading-tight text-center" style={{wordBreak: 'break-word'}}>{label}</span>
+        <span
+          className="text-white mt-2"
+          style={{
+            wordBreak: 'break-word',
+            fontWeight: 400,
+            fontSize: 20,
+            lineHeight: '24px',
+            letterSpacing: 0,
+            textAlign: 'center',
+          }}
+        >
+          {label}
+        </span>
       </div>
     </div>
     {subLabel && <div className="text-xs text-gray-500 mt-2">{subLabel}</div>}

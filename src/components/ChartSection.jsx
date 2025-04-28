@@ -12,7 +12,16 @@ import {
 
 ChartJS.register(LineElement, PointElement, LinearScale, CategoryScale, Tooltip, Legend);
 
-const ChartSection = ({ data, labels }) => {
+const ChartSection = ({
+  data,
+  labels,
+  title,
+  date,
+  children,
+  style = {},
+  titleClassName = '',
+  dateClassName = '',
+}) => {
   const chartData = {
     labels,
     datasets: [
@@ -33,7 +42,15 @@ const ChartSection = ({ data, labels }) => {
     ],
   };
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full" style={style}>
+      <div className="flex items-center mb-2">
+        {title && (
+          <span className={`text-white text-lg font-bold mr-4 ${titleClassName}`}>{title}</span>
+        )}
+        {date && (
+          <span className={`text-white text-base ${dateClassName}`}>{date}</span>
+        )}
+      </div>
       <Line
         data={chartData}
         options={{
@@ -41,8 +58,10 @@ const ChartSection = ({ data, labels }) => {
           maintainAspectRatio: false,
           layout: {
             padding: {
-              left: 55,
-              right: 100,
+              left: 0,
+              right: 0,
+              bottom: 70,
+              top: 0,
             }
           },
           plugins: { legend: { display: false } },
@@ -61,18 +80,18 @@ const ChartSection = ({ data, labels }) => {
               offset: true,
               ticks: {
                 color: '#fff',
-                font: { weight: 'bold' },
-                padding: 10,
-                callback: function(value, index, values) {
-                  if (index === 0) return '' + this.getLabelForValue(value);
-                  if (index === values.length - 1) return this.getLabelForValue(value) + '';
-                  return this.getLabelForValue(value);
+                font: {
+                  weight: 300,
+                  size: 8,
+                  lineHeight: 1.5,
                 },
+                padding: 10,
               },
             },
           },
         }}
       />
+      {children && <div className="mt-4 flex justify-end">{children}</div>}
     </div>
   );
 };

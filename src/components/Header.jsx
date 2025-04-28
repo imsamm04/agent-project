@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import SideMenu from './SideMenu';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const menuItems = [
-    { title: '自分の記録', path: '/my-record' },
+    { title: '自分の記録', path: '/challenge' },
     { title: '体重グラフ', path: '/weight-graph' },
     { title: '目標', path: '/goal' },
     { title: '選択中のコース', path: '/selected-course' },
-    { title: 'コラム一覧', path: '/column-list' },
+    { title: 'コラム一覧', path: '/column' },
     { title: '設定', path: '/settings' },
   ];
 
@@ -25,7 +26,7 @@ const Header = () => {
           {/* Desktop Menu */}
           <nav className="flex items-center space-x-[56px]">
             <Link 
-              to="/column" 
+              to="/challenge" 
               className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity"
             >
               <div className="w-[32px] h-[32px] flex items-center justify-center">
@@ -34,7 +35,7 @@ const Header = () => {
               <span className="text-[16px]">自分の記録</span>
             </Link>
             <Link 
-              to="/challenge" 
+              to="/column" 
               className="flex items-center gap-2 text-white hover:opacity-80 transition-opacity"
             >
               <div className="w-[32px] h-[32px] flex items-center justify-center">
@@ -63,21 +64,8 @@ const Header = () => {
             </button>
           </nav>
 
-          {/* Dropdown Menu */}
-          {isMenuOpen && (
-            <div className="absolute top-[64px] right-[160px] w-[280px] bg-[#777777] shadow-lg">
-              {menuItems.map((item, index) => (
-                <Link
-                  key={index}
-                  to={item.path}
-                  className="flex items-center h-[72px] px-[32px] text-white hover:bg-[#414141] border-b border-[#2E2E2E] last:border-none text-[18px]"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.title}
-                </Link>
-              ))}
-            </div>
-          )}
+          {/* Side Menu */}
+          <SideMenu open={isMenuOpen} onClose={() => setIsMenuOpen(false)} menuItems={menuItems} />
         </div>
       </div>
     </header>

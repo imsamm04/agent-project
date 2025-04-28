@@ -1,9 +1,19 @@
 import React from 'react';
+import { DIARY_CARD_STYLES } from '../constants/styles';
 
 const DiaryCard = ({ date, time, content }) => (
-  <div className="bg-white border border-gray-300 rounded p-3 text-sm">
-    <div className="font-bold">{date} {time}</div>
-    <div className="mt-1 text-gray-700">{content}</div>
+  <div
+    className="bg-white border p-3 text-sm"
+    style={{ width: 231, height: 231, borderWidth: 2, borderColor: '#707070' }}
+  >
+    <div style={DIARY_CARD_STYLES.date}>{date}</div>
+    <div style={DIARY_CARD_STYLES.time}>{time}</div>
+    <div
+      className="mt-2"
+      style={DIARY_CARD_STYLES.content}
+    >
+      {content}
+    </div>
   </div>
 );
 

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import MainLayout from '../layouts/MainLayout';
 import HexMenuItem from '../components/HexMenuItem';
 import RecordCard from '../components/RecordCard';
 import ChartSection from '../components/ChartSection';
@@ -23,9 +22,8 @@ const TopPage = () => {
   const { visibleCount, loading, handleLoadMore } = useLoadMore(filteredRecords.length);
 
   return (
-    <div>
-      <Header />
-      <main className="min-h-screen bg-gray-100 pt-[64px]">
+    <MainLayout>
+      <main className="min-h-screen pt-[64px]">
         {/* Banner + Chart */}
         <div className="flex mb-8 items-stretch w-full">
           <div className="relative w-5/12 h-[316px]">
@@ -89,8 +87,7 @@ const TopPage = () => {
           )}
         </div>
       </main>
-      <Footer />
-    </div>
+    </MainLayout>
   );
 };
 

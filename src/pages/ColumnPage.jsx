@@ -1,6 +1,5 @@
 import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import MainLayout from '../layouts/MainLayout';
 import SectionTitle from '../components/SectionTitle';
 import ColumnCard from '../components/ColumnCard';
 import Button from '../components/Button';
@@ -21,9 +20,8 @@ const ColumnPage = () => {
   const { visibleCount, loading, handleLoadMore } = useLoadMore(columnData.length);
 
   return (
-    <div>
-      <Header />
-      <main className="min-h-screen bg-gray-100 pt-[64px]">
+    <MainLayout>
+      <main className="min-h-screen pt-[64px]">
         <div className="container mx-auto py-8">
           {/* Section Titles */}
           <div className="grid grid-cols-4 mb-8 max-w-grid gap-[32px]">
@@ -64,8 +62,7 @@ const ColumnPage = () => {
           )}
         </div>
       </main>
-      <Footer />
-    </div>
+    </MainLayout>
   );
 };
 

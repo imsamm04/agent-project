@@ -7,7 +7,6 @@ export const UserProvider = ({ children }) => {
   const [user, setUser] = useState({
     name: 'Taro',
     avatar: '',
-    // Thêm các trường khác nếu cần
   });
 
   return (

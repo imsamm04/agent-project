@@ -1,70 +1,112 @@
-# Getting Started with Create React App
+## Overview
+This is a health management application built with React that helps users track their health metrics, exercise records, and dietary habits. The application features a modern, responsive design with a focus on user experience and data visualization.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Development Notes
+- **Development Time**: > **⏱️ The project was completed within a 6-hour timeframe.**
+- **Design Implementation**: Due to time constraints, the implementation focuses on core functionality and main design elements rather than pixel-perfect reproduction.
 
-## Available Scripts
+> 🙏 **Thank you very much for taking the time to review this submission!**
 
-In the project directory, you can run:
+- **Priority Areas**:
+  - Core feature implementation
+  - Responsive layout
+  - Basic user interactions
+  - Essential UI components
+  - Basic error handling
 
-### `npm start`
+## Features
+- **Dashboard**: Visual representation of health metrics with interactive charts
+- **Record Management**: Track exercise and dietary records
+- **Notification System**: Real-time notifications for achievements and reminders
+- **Challenge System**: Engage with health-related challenges
+- **Column Section**: Access health-related articles and tips
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technology Stack
+- React 18
+- React Router v6
+- Tailwind CSS
+- Chart.js (for data visualization)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Typography
+The application uses the following Google Fonts:
+- **Noto Sans JP**: Primary font for Japanese text
+  - Weights: 300, 400, 500, 700
+  - [Font Link](https://fonts.google.com/noto/specimen/Noto+Sans+JP)
+- **Inter**: Primary font for Latin text and numbers
+  - Weights: 300, 400, 500, 600, 700
+  - [Font Link](https://fonts.google.com/specimen/Inter)
 
-### `npm test`
+## Project Structure
+```
+src/
+├── components/     # Reusable UI components
+├── pages/         # Page components
+├── layouts/       # Layout components
+├── hooks/         # Custom React hooks
+├── data/          # Data management
+├── contexts/      # React contexts
+├── services/      # API services
+├── utils/         # Utility functions
+├── styles/        # CSS styles
+│   └── fonts.css  # Font configurations
+└── assets/        # Static assets
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installation
+1. Clone the repository
+```bash
+git clone [repository-url]
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Start the development server
+```bash
+npm start
+# or
+yarn start
+```
 
-### `npm run eject`
+The application will be available at `http://localhost:3000`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Building for Production
+```bash
+npm run build
+# or
+yarn build
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Code Style Guide
+- Use functional components with hooks
+- Follow the React component file structure:
+  1. Imports
+  2. Component definition
+  3. Helper functions
+  4. Exports
+- Use TypeScript for type safety
+- Follow Airbnb React/JSX Style Guide
+- Use appropriate font classes:
+  - `font-jp` for Japanese text
+  - `font-latin` for Latin text and numbers
+  - Font weight utilities: `font-light`, `font-regular`, `font-medium`, `font-semibold`, `font-bold`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Testing
+```bash
+npm test
+# or
+yarn test
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+[License Type]

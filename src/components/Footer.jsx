@@ -1,4 +1,5 @@
 import React from 'react';
+import { TEXT_STYLES } from '../constants/styles';
 
 const footerLinks = [
   '会員登録',
@@ -18,13 +19,7 @@ const Footer = () => (
       <ul className="flex flex-row gap-12">
         {footerLinks.map((link, idx) => (
           <li key={idx} className="text-white whitespace-nowrap"
-            style={{
-              fontFamily: 'Hiragino Kaku Gothic Pro, sans-serif',
-              fontWeight: 300,
-              fontSize: '11px',
-              lineHeight: '16px',
-              letterSpacing: '0.03px',
-            }}
+            style={TEXT_STYLES.FOOTER_LINK}
           >
             {link}
           </li>
