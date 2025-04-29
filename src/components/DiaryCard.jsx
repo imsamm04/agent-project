@@ -3,8 +3,8 @@ import { DIARY_CARD_STYLES } from '../constants/styles';
 
 const DiaryCard = ({ date, time, content }) => (
   <div
-    className="bg-white border p-3 text-sm"
-    style={{ width: 231, height: 231, borderWidth: 2, borderColor: '#707070' }}
+    className="bg-white border p-3 text-sm w-full sm:w-[231px] aspect-square"
+    style={{ borderWidth: 2, borderColor: '#707070' }}
   >
     <div style={DIARY_CARD_STYLES.date}>{date}</div>
     <div style={DIARY_CARD_STYLES.time}>{time}</div>

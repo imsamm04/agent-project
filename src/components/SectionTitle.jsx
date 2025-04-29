@@ -1,11 +1,10 @@
 import React from 'react';
 
 const SectionTitle = ({ title, subTitle, className = '' }) => (
-  <div className={`flex flex-col items-center justify-center bg-[#2E2E2E] w-[216px] h-[144px] ${className}`}>
+  <div className={`flex flex-col items-center justify-center bg-[#2E2E2E] w-full sm:w-[216px] h-[144px] ${className}`}>
     <span
       className="text-[#FFCC21]"
       style={{
-        fontFamily: 'Inter, sans-serif',
         fontWeight: 400,
         fontSize: '22px',
         lineHeight: '27px',
@@ -19,7 +18,6 @@ const SectionTitle = ({ title, subTitle, className = '' }) => (
     <span
       className="text-white"
       style={{
-        fontFamily: 'Hiragino Kaku Gothic Pro, sans-serif',
         fontWeight: 300,
         fontSize: '18px',
         lineHeight: '26px',

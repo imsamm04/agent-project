@@ -23,14 +23,14 @@ const TopPage = () => {
 
   return (
     <MainLayout>
-      <main className="min-h-screen pt-[64px]">
+      <main className="min-h-screen pt-[64px] px-4 md:px-6 lg:px-8">
         {/* Banner + Chart */}
-        <div className="flex mb-8 items-stretch w-full">
-          <div className="relative w-5/12 h-[316px]">
+        <div className="flex flex-col md:flex-row mb-8 items-stretch w-full">
+          <div className="relative w-full md:w-5/12 h-[200px] md:h-[316px]">
             <img src="/imgs/d01.jpg" alt="banner" className="w-full h-full object-cover" />
-            <img src="/imgs/main_photo_text.png" alt="banner overlay" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none" />
+            <img src="/imgs/main_photo_text.png" alt="banner overlay" className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none w-3/4 md:w-auto" />
           </div>
-          <div className="w-7/12 h-[316px] flex items-center bg-[#2E2E2E]">
+          <div className="w-full md:w-7/12 h-[200px] md:h-[316px] flex items-center bg-[#2E2E2E]">
             <div className="w-full h-full flex items-center">
               <ChartSection
                 data={[
@@ -44,7 +44,7 @@ const TopPage = () => {
         </div>
         <div className="container mx-auto">
           {/* Hex Menu */}
-          <div className="flex justify-center gap-[74px] mb-8">
+          <div className="flex flex-wrap justify-center gap-4 md:gap-[74px] mb-8">
             {hexMenus.map((item, idx) => (
               <HexMenuItem
                 key={item.label}
@@ -56,7 +56,7 @@ const TopPage = () => {
           </div>
           {/* Record Cards + ScrollToTop */}
           <div className="relative mb-8" style={{ width: 'fit-content', margin: '0 auto' }}>
-            <div className="grid grid-cols-4 gap-2 max-w-grid">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 max-w-grid">
               {filteredRecords.slice(0, visibleCount).map((rec, idx) => (
                 <RecordCard key={idx} {...rec} />
               ))}
@@ -64,7 +64,7 @@ const TopPage = () => {
             <div
               className="fixed z-50"
               style={{
-                right: `calc((100vw - var(--container-width)) / 2 - 10px)`,
+                right: '16px',
                 bottom: '32px',
               }}
             >

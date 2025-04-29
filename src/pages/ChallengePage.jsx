@@ -31,21 +31,21 @@ const ChallengePage = () => {
     <MainLayout>
       <main className="min-h-screen bg-gray-100 pt-[64px] pb-12">
         {/* Record Cards */}
-        <div className="flex justify-center gap-12 mt-12">
+        <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 lg:gap-12 mt-8 sm:mt-12 px-4 sm:px-6">
           {recordCards.map((card, idx) => (
             <ChallengeMenuCard key={idx} image={card.image} title={card.title} subLabel={card.subLabel} />
           ))}
         </div>
 
         {/* Chart Section */}
-        <div className="flex justify-center mt-12">
-          <div className="w-[960px] h-[300px] bg-[#414141] p-6">
+        <div className="flex justify-center mt-8 sm:mt-12 px-4 sm:px-6">
+          <div className="w-full max-w-[960px] h-[300px] bg-[#414141] p-4 sm:p-6">
             <div className="flex items-center mb-2">
               <span className="text-white mr-4" style={CHALLENGE_STYLES.heading}>BODY<br />RECORD</span>
               <span className="text-white text-base" style={CHALLENGE_STYLES.date}>2021.05.21</span>
             </div>
             <ChartSection data={chartData[filterType]} labels={chartLabels[filterType]} />
-            <div className="flex ml-6 gap-4 mt-[-60px] justify-start">
+            <div className="flex ml-0 sm:ml-6 gap-2 sm:gap-4 mt-[-60px] justify-start overflow-x-auto">
               {FILTERS.map(f => (
                 <ChartFilterButton
                   key={f.key}
@@ -59,21 +59,21 @@ const ChallengePage = () => {
         </div>
 
         {/* Exercise Table */}
-        <div className="flex justify-center mt-12">
-          <div className="w-[960px] bg-[#414141] p-6">
+        <div className="flex justify-center mt-8 sm:mt-12 px-4 sm:px-6">
+          <div className="w-full max-w-[960px] bg-[#414141] p-4 sm:p-6">
             <div className="flex items-center mb-2">
-            <span className="text-white mr-4" style={CHALLENGE_STYLES.heading}>MY<br />EXERCISE</span>
-            <span className="text-white text-base" style={CHALLENGE_STYLES.date}>2021.05.21</span>
+              <span className="text-white mr-4" style={CHALLENGE_STYLES.heading}>MY<br />EXERCISE</span>
+              <span className="text-white text-base" style={CHALLENGE_STYLES.date}>2021.05.21</span>
             </div>
             <ExerciseTable data={exerciseData} />
           </div>
         </div>
 
         {/* Diary Cards */}
-        <div className="flex flex-col items-center mt-12">
-          <div className="w-[960px]">
+        <div className="flex flex-col items-center mt-8 sm:mt-12 px-4 sm:px-6">
+          <div className="w-full max-w-[960px]">
             <span className="text-[#414141] text-lg font-bold mb-4 block" style={TEXT_STYLES.HEADING}>MY DIARY</span>
-            <div className="grid grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {diaryData.slice(0, visibleDiary).map((item, idx) => (
                 <DiaryCard key={idx} date={item.date} time={item.time} content={item.content} />
               ))}
@@ -96,7 +96,7 @@ const ChallengePage = () => {
         </div>
 
         {/* Scroll To Top */}
-        <div className="fixed bottom-8 right-8 z-50">
+        <div className="fixed bottom-8 right-4 sm:right-8 z-50">
           <ScrollToTop />
         </div>
       </main>
