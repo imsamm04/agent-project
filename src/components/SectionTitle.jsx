@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SectionTitle = ({ title, subTitle, className = '' }) => (
-  <div className={`flex flex-col items-center justify-center bg-[#2E2E2E] w-full sm:w-[216px] h-[144px] ${className}`}>
+  <div className={`flex flex-col items-center justify-center bg-[#2E2E2E] w-full sm:w-[216px] h-[144px] px-4 ${className}`}>
     <span
       className="text-[#FFCC21]"
       style={{
@@ -14,7 +14,7 @@ const SectionTitle = ({ title, subTitle, className = '' }) => (
     >
       {title}
     </span>
-    <div className="w-16 h-[2px] bg-white my-3" />
+    <div className="w-16 h-[1px] bg-white my-3" />
     <span
       className="text-white"
       style={{

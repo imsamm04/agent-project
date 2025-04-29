@@ -24,7 +24,7 @@ const ColumnPage = () => {
       <main className="min-h-screen pt-[64px]">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Section Titles */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mb-8 gap-4 sm:gap-6 lg:gap-[32px] max-w-grid mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mb-8 gap-4 sm:gap-6 lg:gap-[32px] max-w-grid mx-auto mb-[56px]">
             {sectionTitles.map((item, idx) => (
               <SectionTitle key={item.title} {...item} />
             ))}
@@ -48,7 +48,7 @@ const ColumnPage = () => {
           </div>
           {visibleCount < columnData.length && (
             <div className="flex justify-center">
-              <Button variant="gradient" onClick={handleLoadMore} disabled={loading}>
+              <Button variant="gradient" onClick={handleLoadMore} disabled={loading} className="text-lg">
                 {loading ? (
                   <span className="flex items-center justify-center">
                     <LoadingSpinner />

@@ -9,6 +9,8 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
+import { COLORS } from '../constants/colors';
+import { CHART_STYLES } from '../constants/styles';
 
 ChartJS.register(LineElement, PointElement, LinearScale, CategoryScale, Tooltip, Legend);
 
@@ -28,15 +30,15 @@ const ChartSection = ({
       {
         label: 'Dataset 1',
         data: data[0],
-        borderColor: '#FFCC21',
-        backgroundColor: 'rgba(255,204,33,0.2)',
+        borderColor: COLORS.chart.line1,
+        backgroundColor: COLORS.chart.line1Bg,
         tension: 0.4,
       },
       {
         label: 'Dataset 2',
         data: data[1],
-        borderColor: '#8FE9D0',
-        backgroundColor: 'rgba(143,233,208,0.2)',
+        borderColor: COLORS.chart.line2,
+        backgroundColor: COLORS.chart.line2Bg,
         tension: 0.4,
       },
     ],
@@ -45,51 +47,15 @@ const ChartSection = ({
     <div className="w-full h-full" style={style}>
       <div className="flex items-center mb-2">
         {title && (
-          <span className={`text-white text-lg font-bold mr-4 ${titleClassName}`}>{title}</span>
+          <span className={`mr-4 ${titleClassName}`} style={CHART_STYLES.title}>{title}</span>
         )}
         {date && (
-          <span className={`text-white text-base ${dateClassName}`}>{date}</span>
+          <span className={dateClassName} style={CHART_STYLES.date}>{date}</span>
         )}
       </div>
       <Line
         data={chartData}
-        options={{
-          responsive: true,
-          maintainAspectRatio: false,
-          layout: {
-            padding: {
-              left: 0,
-              right: 0,
-              bottom: 70,
-              top: 0,
-            }
-          },
-          plugins: { legend: { display: false } },
-          scales: {
-            y: {
-              display: false,
-              grid: { display: false, drawBorder: false },
-              ticks: { display: false },
-            },
-            x: {
-              grid: {
-                color: '#777777',
-                lineWidth: 2,
-                drawBorder: false,
-              },
-              offset: true,
-              ticks: {
-                color: '#fff',
-                font: {
-                  weight: 300,
-                  size: 8,
-                  lineHeight: 1.5,
-                },
-                padding: 10,
-              },
-            },
-          },
-        }}
+        options={CHART_STYLES.chartOptions}
       />
       {children && <div className="mt-4 flex justify-end">{children}</div>}
     </div>

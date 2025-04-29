@@ -8,7 +8,7 @@ const ChartFilterButton = ({ label, active, onClick, className = '', children })
       style={{
         background: active ? COLORS.primary[300] : COLORS.white,
         color: active ? COLORS.white : COLORS.primary[300],
-        fontWeight: 'bold',
+        // fontWeight: 'bold',
       }}
       onClick={onClick}
       type="button"

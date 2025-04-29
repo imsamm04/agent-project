@@ -9,6 +9,15 @@ module.exports = {
         'jp': ['Noto Sans JP', 'sans-serif'],
         'latin': ['Inter', 'sans-serif'],
       },
+      fontSize: {
+        'xs': '12px',
+        'sm': '14px',
+        'base': '15px',
+        'lg': '18px',
+        'xl': '20px',
+        '2xl': '24px',
+        '3xl': '30px',
+      },
       colors: {
         primary: '#FF963C',
         secondary: '#8FE9D0',

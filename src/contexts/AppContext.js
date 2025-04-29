@@ -63,7 +63,6 @@ export const AppProvider = ({ children }) => {
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
 
-// Custom hook for using the context
 export const useApp = () => {
   const context = useContext(AppContext);
   if (!context) {

@@ -1,3 +1,5 @@
+import { COLORS } from "./colors";
+
 export const FONT_FAMILY = {
   HIRAGINO: 'Hiragino Kaku Gothic Pro, sans-serif',
 };
@@ -70,5 +72,93 @@ export const DIARY_CARD_STYLES = {
     lineHeight: '17px',
     letterSpacing: '0.06px',
     color: '#414141',
+  },
+};
+
+export const BUTTON_VARIANTS = {
+  primary: 'bg-primary-400 hover:bg-primary-500 text-white',
+  secondary: 'bg-secondary-300 hover:bg-secondary-300 text-black',
+  gradient: 'bg-gradient-to-r from-[#FFCC21] to-[#FF963C] text-white font-normal text-lg leading-[26px] tracking-normal text-center rounded-lg border-none shadow-none transition-colors duration-200',
+};
+
+export const CHALLENGE_CARD_STYLES = {
+  title: {
+    color: COLORS.primary[300],
+    fontWeight: 400,
+    fontSize: '25px',
+    lineHeight: '30px',
+    letterSpacing: '0.13px',
+    textAlign: 'center',
+    width: '100%',
+    display: 'block',
+  },
+  subLabel: {
+    background: COLORS.primary[400],
+    color: COLORS.white,
+    fontWeight: 400,
+    fontSize: '14px',
+    lineHeight: '24px',
+    padding: '8px 0px',
+    width: '160px',
+    textAlign: 'center',
+  },
+};
+
+export const CHART_STYLES = {
+  title: {
+    color: COLORS.white,
+    fontSize: '18px',
+    fontWeight: 700,
+    marginRight: '16px',
+  },
+  date: {
+    color: COLORS.white,
+    fontSize: '16px',
+  },
+  chartOptions: {
+    responsive: true,
+    maintainAspectRatio: false,
+    layout: {
+      padding: {
+        left: 0,
+        right: 0,
+        bottom: 70,
+        top: 0,
+      }
+    },
+    plugins: { 
+      legend: { 
+        display: false 
+      } 
+    },
+    scales: {
+      y: {
+        display: false,
+        grid: { 
+          display: false, 
+          drawBorder: false 
+        },
+        ticks: { 
+          display: false 
+        },
+      },
+      x: {
+        grid: {
+          color: COLORS.chart.grid,
+          lineWidth: 2,
+          drawBorder: false,
+        },
+        offset: true,
+        ticks: {
+          color: COLORS.chart.text,
+          font: {
+            weight: 300,
+            size: 8,
+            lineHeight: 1.5,
+          },
+          padding: 10,
+        },
+      },
+    },
   },
 }; 

@@ -12,11 +12,11 @@ const HexMenuItem = ({ icon, label, subLabel, active, onClick }) => (
         transform: 'rotate(0deg)',
       }}
     >
-      {/* Nội dung nằm trong lục giác */}
+
       <div className="relative z-10 flex flex-col items-center justify-center w-full h-full">
         {/* Icon overlay */}
         <img src={icon} alt="hexagon icon" className="w-10 h-10 mt-4" />
-        {/* Label nằm trong hexagon */}
+
         <span
           className="text-white mt-2"
           style={{
